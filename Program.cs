@@ -3,11 +3,10 @@ using SmartHome.Services;
 
 DeviceManager manager = new DeviceManager();
 
-SmartFan fan = new SmartFan("1", "Вентилятор");
+TemperatureSensor temperature = new TemperatureSensor("1", "Температура", 25.5);
+MotionSensor motion = new MotionSensor("2", "Движение", true);
 
-manager.AddDevice(fan);
+manager.AddSensor(temperature);
+manager.AddSensor(motion);
 
-fan.TurnOn();
-fan.SetLevel(3);
-
-manager.ShowAll();
+manager.PrintAllMeasurements();

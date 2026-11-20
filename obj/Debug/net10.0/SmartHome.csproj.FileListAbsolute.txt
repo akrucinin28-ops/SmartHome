@@ -13,3 +13,4 @@ C:\Users\ArtemPractika\source\repos\SmartHome\SmartHome\obj\Debug\net10.0\SmartH
 C:\Users\ArtemPractika\source\repos\SmartHome\SmartHome\obj\Debug\net10.0\SmartHome.genruntimeconfig.cache
 C:\Users\ArtemPractika\source\repos\SmartHome\SmartHome\obj\Debug\net10.0\ref\SmartHome.dll
 C:\Users\ArtemPractika\source\repos\SmartHome\SmartHome\obj\Debug\net10.0\SmartHome.csproj.Up2Date
+C:\Users\ArtemPractika\source\repos\SmartHome\SmartHome\obj\Debug\net10.0\SmartHome.sourcelink.json
