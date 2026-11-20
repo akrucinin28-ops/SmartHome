@@ -2,7 +2,7 @@
 
 namespace SmartHome.Devices;
 
-public class SmartFan : SmartDevice, IAdjustable
+public class SmartFan : SmartDevice, IAdjustable, ISchedulable
 {
     public int Speed { get; private set; } = 0;
 
@@ -28,4 +28,27 @@ public class SmartFan : SmartDevice, IAdjustable
                $"{(IsOn ? "вкл" : "выкл")}, " +
                $"скорость {Speed}";
     }
+    private TimeSpan onTime;
+    private TimeSpan offTime;
+
+    public void SetSchedule(TimeSpan onTime, TimeSpan offTime)
+    {
+        this.onTime = onTime;
+        this.offTime = offTime;
+    }
+
+    public void CheckSchedule(DateTime currentTime)
+    {
+        TimeSpan time = currentTime.TimeOfDay;
+
+        if (time >= onTime && time < offTime)
+        {
+            TurnOn();
+        }
+        else
+        {
+            TurnOff();
+        }
+    }
 }
+
