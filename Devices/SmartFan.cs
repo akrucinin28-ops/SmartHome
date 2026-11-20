@@ -2,7 +2,7 @@
 
 namespace SmartHome.Devices;
 
-public class SmartFan : SmartDevice, IAdjustable
+public class SmartFan : SmartDevice, IAdjustable, IEnergyConsumer
 {
     public int Speed { get; private set; } = 0;
 
@@ -27,5 +27,11 @@ public class SmartFan : SmartDevice, IAdjustable
         return $"Вентилятор [{Name}]: " +
                $"{(IsOn ? "вкл" : "выкл")}, " +
                $"скорость {Speed}";
+    }
+    public double PowerWatts => 50;
+
+    public double GetEnergyConsumption(double hours)
+    {
+        return PowerWatts * hours / 1000;
     }
 }
